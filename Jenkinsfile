@@ -1,22 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'katalonstudio/katalon'
-            args "-u root"
-        }
-    }
+    agent { dockerfile true }
     stages {
-        stage('Example Build') {
-            steps {
-                echo 'Budujemy'
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Zaczynamy test tego gówna'
-                sh 'katalon-execute.sh -browserType="Chrome" -retry=0 -statusDelay=15 -testSuitePath="Test Suites/sss"'
+                sh 'docker --version'
             }
         }
     }
-
 }
