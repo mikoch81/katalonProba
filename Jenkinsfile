@@ -26,5 +26,12 @@ pipeline {
             args "-u root"
         }
     }
+    stages {
+        stage('Test') {
+            steps {
+                echo "Hello world"
+            }
+        }
+    }
 
 }
