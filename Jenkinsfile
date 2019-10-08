@@ -8,8 +8,8 @@ pipeline {
     stages {
         stage('Example Build') {
             steps {
-                echo 'Budujemy'
-                sh 'docker --version'
+                sh('echo \'Budujemy\'')
+                sh('docker --version')
             }
         }
         stage('Test') {
