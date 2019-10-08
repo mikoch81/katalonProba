@@ -26,12 +26,5 @@ pipeline {
             args "-u root"
         }
     }
-    stages {
-        stage('Test') {
-            steps {
-               // sh 'katalon-execute.sh -retry=0 -testSuitePath="Test Suites/sss" -executionProfile="default" -browserType="Chrome"'
-            }
-        }
-    }
 
 }
