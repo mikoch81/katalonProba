@@ -9,7 +9,6 @@ pipeline {
         stage('Example Build') {
             steps {
                 echo 'Budujemy'
-                sh -xe 'docker --version'
             }
         }
         stage('Test') {
