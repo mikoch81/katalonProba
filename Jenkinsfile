@@ -3,8 +3,15 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                bat 'docker --version'
+                sh 'docker --version'
             }
+        }
+
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'report/**/*.*', fingerprint: true
+            junit 'report/**/JUnit_Report.xml'
         }
     }
 }
